@@ -20,6 +20,12 @@ AFRAME.registerComponent('vidhandler', {
     this.vid2 = document.querySelector("#vid2")
     this.vid2.pause();
     
+    this.vid3 = document.querySelector("#vid3")
+    this.vid3.pause();
+    
+    this.vid4 = document.querySelector("#vid4")
+    this.vid4.pause();
+    
   },
   tick:function(){
     
@@ -28,11 +34,15 @@ if(this.el.object3D.visible == true){
      this.toggle = true;
      this.vid.play();
      this.vid2.play();
+     this.vid3.play();
+     this.vid4.play();
     }
   }else{
   this.toggle = false;
     this.vid.pause();
     this.vid2.pause();
+    this.vid3.pause();
+    this.vid4.pause();
     }
   }
 });
@@ -51,14 +61,24 @@ if(this.el.object3D.visible == true){
     <a-assets>
       <video id="vid" src="sample-mp4-file.mp4" loop="true" crossorigin>
       <video id="vid2" src="jokic.mp4" loop="true" crossorigin>
+      <video id="vid3" src="dish.mp4" loop="true" crossorigin>
+      <video id="vid4" src="dune.mp4" loop="true" crossorigin>
     </a-assets>
    
     <a-marker id="memarker" type='pattern' url='https://chuyfg.github.io/ARVideo/CustomMarkers/CNN/CNN-marker.patt' vidhandler>
       <a-plane position='0 2 0.1' scale="1 1 1" width="2" rotation="-90 0 0" material='transparent:true;opacity: 1.0;src:#vid'></a-plane>
     </a-marker>
       
-    <a-marker id="memarker" type='pattern' url='https://chuyfg.github.io/ARVideo/CustomMarkers/Dish-LoFi/Dish-LoFi-marker.patt' vidhandler>
+    <a-marker id="memarker" type='pattern' url='https://chuyfg.github.io/ARVideo/CustomMarkers/ESPN-LoFi/ESPN-LoFi-marker.patt' vidhandler>
       <a-plane position='0 2 0.1' scale="1 1 1" width="2" rotation="-90 0 0" material='transparent:true;opacity: 1.0;src:#vid2'></a-plane>
+    </a-marker>
+    
+    <a-marker id="memarker" type='pattern' url='https://chuyfg.github.io/ARVideo/CustomMarkers/Dish-LoFi/Dish-LoFi-marker.patt' vidhandler>
+      <a-plane position='0 2 0.1' scale="1 1 1" width="2" rotation="-90 0 0" material='transparent:true;opacity: 1.0;src:#vid3'></a-plane>
+    </a-marker>
+        
+    <a-marker id="memarker" type='pattern' url='https://chuyfg.github.io/ARVideo/CustomMarkers/HBO-LoFi/HBO-LoFi-marker.patt' vidhandler>
+      <a-plane position='0 2 0.1' scale="1 1 1" width="2" rotation="-90 0 0" material='transparent:true;opacity: 1.0;src:#vid4'></a-plane>
     </a-marker>
     
     <!--<a-marker-camera preset='hiro'camera='far:100000; near:0.01;'></a-marker-camera>-->
